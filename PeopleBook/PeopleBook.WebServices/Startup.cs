@@ -2,6 +2,7 @@
 using Owin;
 using Ninject.Web.Common.OwinHost;
 using Ninject;
+using Ninject.Extensions.Conventions;
 using System.Reflection;
 using PeopleBook.Data;
 using System.Web.Http;
@@ -35,7 +36,15 @@ namespace PeopleBook.WebServices
                 .WithConstructorArgument("context",
                     c => new PeopleBookDbContext());
 
-            kernel.Bind<IBookService>().To<BookService>();
+            //kernel.Bind<IBookService>().To<BookService>();
+            //kernel.
+
+            kernel.Bind(k => k
+                .From(
+                    "PeopleBook.DomainServices")
+                .SelectAllClasses()
+                .InheritedFrom<IService>()
+                .BindDefaultInterface());
 
             //kernel.Bind<IUserIdProvider>().To<AspNetUserIdProvider>();
         }

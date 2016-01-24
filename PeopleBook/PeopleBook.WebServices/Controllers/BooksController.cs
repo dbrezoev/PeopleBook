@@ -25,18 +25,7 @@
         {
             var currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
 
-            var id = this.bookService.Create(currentUserId, "dqdo mraz");
-            //var newBook = new Book
-            //{
-            //    UserId = currentUserId,
-            //    DateCreated = DateTime.Now,
-            //    BookState = BookState.Started,
-            //    Content = "Pesho",
-            //    Title = "Init",
-            //};
-
-            //this.data.Books.Add(newBook);
-            //this.data.SaveChanges();
+            var id = this.bookService.Create(currentUserId, "dqdo mraz");            
 
             return this.Ok(id);
         } 

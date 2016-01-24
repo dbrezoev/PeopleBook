@@ -190,3 +190,5 @@ D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\obj\Debug\PeopleBook.WebSer
 D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\obj\Debug\PeopleBook.WebServices.pdb
 D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\bin\PeopleBook.DomainServices.dll
 D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\bin\PeopleBook.DomainServices.pdb
+D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\bin\Ninject.Extensions.Conventions.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\bin\Ninject.Extensions.Conventions.xml
