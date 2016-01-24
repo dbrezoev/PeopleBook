@@ -6,6 +6,8 @@ using System.Reflection;
 using PeopleBook.Data;
 using System.Web.Http;
 using Ninject.Web.WebApi.OwinHost;
+using PeopleBook.DomainServices.Contracts;
+using PeopleBook.DomainServices.Data;
 
 [assembly: OwinStartup(typeof(PeopleBook.WebServices.Startup))]
 
@@ -33,7 +35,7 @@ namespace PeopleBook.WebServices
                 .WithConstructorArgument("context",
                     c => new PeopleBookDbContext());
 
-            //kernel.Bind<IGameResultValidator>().To<GameResultValidator>();
+            kernel.Bind<IBookService>().To<BookService>();
 
             //kernel.Bind<IUserIdProvider>().To<AspNetUserIdProvider>();
         }

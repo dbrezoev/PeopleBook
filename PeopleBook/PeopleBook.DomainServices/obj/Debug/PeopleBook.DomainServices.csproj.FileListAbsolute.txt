@@ -1,0 +1,15 @@
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\PeopleBook.DomainServices.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\PeopleBook.DomainServices.pdb
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\PeopleBook.Data.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\PeopleBook.Models.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\EntityFramework.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\PeopleBook.Data.pdb
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\PeopleBook.Models.pdb
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\EntityFramework.xml
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\obj\Debug\PeopleBook.DomainServices.csprojResolveAssemblyReference.cache
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\obj\Debug\PeopleBook.DomainServices.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.DomainServices\obj\Debug\PeopleBook.DomainServices.pdb

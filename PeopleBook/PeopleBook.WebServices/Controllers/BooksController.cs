@@ -8,41 +8,51 @@
 
     using Data;
     using PeopleBook.Models;
-    
+    using DomainServices.Contracts;
+    using System.Linq;
 
-    public class BooksController : BaseController   
+    public class BooksController : ApiController
     {
-        public BooksController(IPeopleBookData data)
-            : base(data)
+        private readonly IBookService bookService;
+
+        public BooksController(IBookService bookService)
         {
+            this.bookService = bookService;
         }
 
         [HttpPost] // Admin
-        public IHttpActionResult Create()
+        public IHttpActionResult Create([FromBody]string content)
         {
             var currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
 
-            var newBook = new Book
-            {
-                UserId = currentUserId,
-                DateCreated = DateTime.Now,
-                BookState = BookState.Started,
-                Content = "Pesho",
-                Title = "Init",
-            };
+            var id = this.bookService.Create(currentUserId, "dqdo mraz");
+            //var newBook = new Book
+            //{
+            //    UserId = currentUserId,
+            //    DateCreated = DateTime.Now,
+            //    BookState = BookState.Started,
+            //    Content = "Pesho",
+            //    Title = "Init",
+            //};
 
-            this.data.Books.Add(newBook);
-            this.data.SaveChanges();
+            //this.data.Books.Add(newBook);
+            //this.data.SaveChanges();
 
-            return this.Ok(newBook.Id);
+            return this.Ok(id);
         } 
         
         [HttpGet]
         public IHttpActionResult GetAll()
         {
-            var allBooks = this.data.Books;
+            var allBooks = this.bookService.GetAll().Select(b => new
+            {
+                Name = b.Content,
+                State = b.BookState,
+                DateCreated = b.DateCreated
+            }).ToList();
 
             return this.Ok(allBooks);
         }       
+
     }
 }

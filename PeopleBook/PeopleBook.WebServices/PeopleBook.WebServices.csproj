@@ -234,11 +234,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\OffersController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -319,6 +316,10 @@
     <ProjectReference Include="..\PeopleBook.Data\PeopleBook.Data.csproj">
       <Project>{15b743e1-345e-4e47-a0b2-13e15481fb13}</Project>
       <Name>PeopleBook.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PeopleBook.DomainServices\PeopleBook.DomainServices.csproj">
+      <Project>{e3f6c5dc-2d9c-4d5a-bedd-1b0c27f14bba}</Project>
+      <Name>PeopleBook.DomainServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\PeopleBook.Models\PeopleBook.Models.csproj">
       <Project>{f7faf3ed-5481-45f5-be77-c018ef0c2c67}</Project>

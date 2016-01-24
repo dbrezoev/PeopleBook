@@ -188,3 +188,5 @@ D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\bin\System.Web.Http.Owin.xm
 D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\obj\Debug\PeopleBook.WebServices.csprojResolveAssemblyReference.cache
 D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\obj\Debug\PeopleBook.WebServices.dll
 D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\obj\Debug\PeopleBook.WebServices.pdb
+D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\bin\PeopleBook.DomainServices.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.WebServices\bin\PeopleBook.DomainServices.pdb
