@@ -12,3 +12,17 @@ D:\Projects\People_Book\PeopleBook\PeopleBook.Models\bin\Debug\Microsoft.AspNet.
 D:\Projects\People_Book\PeopleBook\PeopleBook.Models\obj\Debug\PeopleBook.Models.csprojResolveAssemblyReference.cache
 D:\Projects\People_Book\PeopleBook\PeopleBook.Models\obj\Debug\PeopleBook.Models.dll
 D:\Projects\People_Book\PeopleBook\PeopleBook.Models\obj\Debug\PeopleBook.Models.pdb
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\bin\Debug\PeopleBook.Models.dll.config
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\bin\Debug\PeopleBook.Models.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\bin\Debug\PeopleBook.Models.pdb
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\bin\Debug\EntityFramework.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\bin\Debug\EntityFramework.xml
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\obj\Debug\PeopleBook.Models.csprojResolveAssemblyReference.cache
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\obj\Debug\PeopleBook.Models.dll
+D:\Projects\ppbook\PeopleBook\PeopleBook.Models\obj\Debug\PeopleBook.Models.pdb

@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Book.cs" />
     <Compile Include="BookState.cs" />
+    <Compile Include="Flag.cs" />
     <Compile Include="Like.cs" />
     <Compile Include="Offer.cs" />
     <Compile Include="OfferState.cs" />

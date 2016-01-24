@@ -6,9 +6,13 @@
 
     public class Offer
     {
+        private ICollection<Flag> flags;
+        private ICollection<Like> likes;
+
         public Offer()
         {
-            this.Likes = new HashSet<Like>();
+            this.flags = new HashSet<Flag>();
+            this.likes = new HashSet<Like>();
         }
 
         public int Id { get; set; }
@@ -27,6 +31,28 @@
 
         public virtual User User { get; set; }
 
-        public virtual ICollection<Like> Likes { get; set; }
+        public virtual ICollection<Flag> Flags
+        {
+            get
+            {
+                return this.flags;
+            }
+            set
+            {
+                this.flags = value;
+            }
+        }
+
+        public virtual ICollection<Like> Likes
+        {
+            get
+            {
+                return this.likes;
+            }
+            set
+            {
+                this.likes = value;
+            }
+        }
     }
 }
