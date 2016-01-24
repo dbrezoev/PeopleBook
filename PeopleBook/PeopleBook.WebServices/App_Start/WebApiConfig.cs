@@ -30,6 +30,7 @@ namespace PeopleBook.WebServices
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/json"));
             config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
             config.Formatters.Remove(config.Formatters.XmlFormatter);
+
         }
     }
 }
