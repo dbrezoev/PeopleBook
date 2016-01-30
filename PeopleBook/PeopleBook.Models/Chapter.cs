@@ -4,12 +4,12 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class Offer
+    public class Chapter
     {
         private ICollection<Flag> flags;
         private ICollection<Like> likes;
 
-        public Offer()
+        public Chapter()
         {
             this.flags = new HashSet<Flag>();
             this.likes = new HashSet<Like>();

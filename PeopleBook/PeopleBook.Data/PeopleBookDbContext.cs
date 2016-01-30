@@ -25,7 +25,7 @@
 
         public IDbSet<Like> Likes { get; set; }
 
-        public IDbSet<Offer> Offers { get; set; }
+        public IDbSet<Chapter> Offers { get; set; }
 
         public new IDbSet<T> Set<T>() where T : class
         {

@@ -8,8 +8,8 @@
 
         public virtual User User { get; set; }
 
-        public int OfferId { get; set; }
+        public int ChapterId { get; set; }
 
-        public virtual Offer Offer { get; set; }
+        public virtual Chapter Chapter { get; set; }
     }
 }

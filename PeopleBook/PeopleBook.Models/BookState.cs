@@ -2,7 +2,7 @@
 {
     public enum BookState
     {
-        Started = 0,
+        InProgress = 0,
         Finished = 1
     }
 }

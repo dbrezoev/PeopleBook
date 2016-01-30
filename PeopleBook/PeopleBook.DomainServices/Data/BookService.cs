@@ -27,8 +27,7 @@
             var book = new Book
             {
                 UserId = userId,
-                Content = content,
-                DateCreated = DateTime.Now
+                Content = content
             };
 
             this.Data.Books.Add(book);

@@ -61,8 +61,8 @@
     <Compile Include="BookState.cs" />
     <Compile Include="Flag.cs" />
     <Compile Include="Like.cs" />
-    <Compile Include="Offer.cs" />
-    <Compile Include="OfferState.cs" />
+    <Compile Include="Chapter.cs" />
+    <Compile Include="ChapterState.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -46,11 +46,11 @@
             }
         }  
 
-        public IRepository<Offer> Offers
+        public IRepository<Chapter> Offers
         {
             get
             {
-                return this.GetRepository<Offer>();
+                return this.GetRepository<Chapter>();
             }
         }
 

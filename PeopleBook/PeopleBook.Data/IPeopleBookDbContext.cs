@@ -13,7 +13,7 @@
 
         IDbSet<Like> Likes { get; set; }
 
-        IDbSet<Offer> Offers { get; set; }
+        IDbSet<Chapter> Offers { get; set; }
 
         IDbSet<T> Set<T>() where T : class;
 

@@ -10,13 +10,13 @@
     public class User : IdentityUser
     {
         private ICollection<Like> likes;
-        private ICollection<Offer> offers;
+        private ICollection<Chapter> offers;
         private ICollection<Flag> flags;
 
         public User()
         {
             this.flags = new HashSet<Flag>();
-            this.offers = new HashSet<Offer>();
+            this.offers = new HashSet<Chapter>();
             this.likes = new HashSet<Like>();
         }
 
@@ -30,7 +30,7 @@
 
         public bool Gender { get; set; }
 
-        public ICollection<Offer> Offers
+        public ICollection<Chapter> Offers
         {
             get
             {

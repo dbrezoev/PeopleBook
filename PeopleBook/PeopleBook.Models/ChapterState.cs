@@ -1,6 +1,6 @@
 ﻿namespace PeopleBook.Models
 {
-    public enum OfferState
+    public enum ChapterState
     {
         
     }

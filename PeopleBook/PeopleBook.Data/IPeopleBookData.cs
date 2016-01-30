@@ -9,7 +9,7 @@
 
         IRepository<Book> Books { get; }
 
-        IRepository<Offer> Offers { get; }
+        IRepository<Chapter> Offers { get; }
 
         IRepository<Like> Likes { get; }
 
