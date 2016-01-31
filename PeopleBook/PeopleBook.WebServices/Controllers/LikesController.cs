@@ -25,5 +25,15 @@
 
             return this.Ok(id);
         }
+
+        [HttpDelete]
+        public IHttpActionResult Delete(LikeModel likeModel)
+        {
+            var currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
+
+            var id = this.likesService.Delete(likeModel.ChapterId, currentUserId);
+
+            return this.Ok(id);
+        }
     }
 }

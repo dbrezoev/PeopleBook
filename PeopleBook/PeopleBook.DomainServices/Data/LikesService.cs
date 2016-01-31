@@ -17,13 +17,8 @@ namespace PeopleBook.DomainServices.Data
         public int Create(int chapterId, string userId)
         {
             var chapterToLike = this.Data.Chapters.Find(chapterId);
-
-            //check if this user has already liked the chapter
-            var hasAlreadyLikedTheChapter = this.Data.Likes
-                .All()
-                .Where(l => l.UserId == userId)
-                .Where(l => l.ChapterId == chapterId)
-                .Any();
+            
+            var hasAlreadyLikedTheChapter = this.HasUserAlreadyLikedChapter(chapterId, userId);
 
             if (hasAlreadyLikedTheChapter)
             {
@@ -41,6 +36,43 @@ namespace PeopleBook.DomainServices.Data
             this.Data.SaveChanges();
 
             return like.Id;
+        }
+
+        public int Delete(int chapterId, string userId)
+        {
+            var chapterToUnLike = this.Data.Chapters.Find(chapterId);
+
+            //user had to have liked before remove like
+
+            var hasAlreadyLikedTheChapter = this.HasUserAlreadyLikedChapter(chapterId, userId);
+
+            if(!hasAlreadyLikedTheChapter)
+            {
+                throw new ArgumentException(string.Format(ServicesConstants.UserHasToLikeChapterBeforeUnlikeId, userId, chapterId));
+            }
+
+            var like = this.Data.Likes
+                .All()
+                .Where(l => l.UserId == userId)
+                .Where(l => l.ChapterId == chapterId)
+                .First();
+
+            chapterToUnLike.Likes.Remove(like);
+
+            this.Data.SaveChanges();
+
+            return like.Id;
+        }
+
+        private bool HasUserAlreadyLikedChapter(int chapterId, string userId)
+        {
+            var result = this.Data.Likes
+                .All()
+                .Where(l => l.UserId == userId)
+                .Where(l => l.ChapterId == chapterId)
+                .Any();
+
+            return result;
         }
     }
 }
