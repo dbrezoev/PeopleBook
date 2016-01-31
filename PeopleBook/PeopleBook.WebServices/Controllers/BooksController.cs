@@ -31,7 +31,15 @@
 
             return this.Ok(id);
         }
-        
+
+        [HttpDelete] // Admin only!
+        public IHttpActionResult Delete(string bookId)
+        {
+            var id = this.bookService.Delete(bookId);
+
+            return this.Ok(id);
+        }
+
         [HttpGet]
         public IHttpActionResult GetAll()
         {

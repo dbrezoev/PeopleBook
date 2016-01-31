@@ -10,5 +10,7 @@
         IQueryable<Book> GetAll();
 
         Guid Create(string userId);
+
+        string Delete(string bookId);
     }
 }

@@ -34,5 +34,15 @@
 
             return book.Id;
         }
+
+        public string Delete(string bookId)
+        {
+            var book = this.Data.Books.Find(bookId);
+
+            this.Data.Books.Delete(book);
+            this.Data.SaveChanges();
+
+            return book.Id.ToString();
+        }
     }
 }
