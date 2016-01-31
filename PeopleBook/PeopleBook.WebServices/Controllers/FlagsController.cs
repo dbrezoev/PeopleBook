@@ -14,7 +14,7 @@ namespace PeopleBook.WebServices.Controllers
     {
         private readonly IFlagsService flagsService;
 
-        public FlagsController(IFlagsService flagService)
+        public FlagsController(IFlagsService flagsService)
         {
             this.flagsService = flagsService;
         }
