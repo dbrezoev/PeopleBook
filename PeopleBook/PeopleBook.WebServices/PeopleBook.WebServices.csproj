@@ -240,6 +240,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\ChaptersController.cs" />
+    <Compile Include="Controllers\FlagsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LikesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -251,6 +252,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="RequestModels\BookModel.cs" />
     <Compile Include="RequestModels\ChapterModel.cs" />
+    <Compile Include="RequestModels\FlagModel.cs" />
     <Compile Include="RequestModels\LikeModel.cs" />
     <Compile Include="ResponseModels\BookResponseModel.cs" />
     <Compile Include="Results\ChallengeResult.cs" />

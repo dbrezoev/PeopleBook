@@ -42,11 +42,13 @@
   <ItemGroup>
     <Compile Include="Contracts\IBookService.cs" />
     <Compile Include="Contracts\IChapterService.cs" />
+    <Compile Include="Contracts\IFlagsService.cs" />
     <Compile Include="Contracts\ILikesService.cs" />
     <Compile Include="Contracts\IService.cs" />
     <Compile Include="Data\BaseService.cs" />
     <Compile Include="Data\BookService.cs" />
     <Compile Include="Data\ChapterService.cs" />
+    <Compile Include="Data\FlagsService.cs" />
     <Compile Include="Data\LikesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

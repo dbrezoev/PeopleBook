@@ -54,6 +54,14 @@
             }
         }
 
+        public IRepository<Flag> Flags
+        {
+            get
+            {
+                return this.GetRepository<Flag>();
+            }
+        }
+
         public void SaveChanges()
         {
             this.context.SaveChanges();

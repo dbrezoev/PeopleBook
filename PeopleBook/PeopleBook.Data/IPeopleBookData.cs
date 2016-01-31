@@ -13,6 +13,8 @@
 
         IRepository<Like> Likes { get; }
 
+        IRepository<Flag> Flags { get; }
+
         void SaveChanges();
     }
 }
