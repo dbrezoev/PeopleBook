@@ -46,7 +46,7 @@
             }
         }  
 
-        public IRepository<Chapter> Offers
+        public IRepository<Chapter> Chapters
         {
             get
             {

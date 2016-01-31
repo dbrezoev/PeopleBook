@@ -22,15 +22,25 @@
             this.bookService = bookService;
         }
 
-        [HttpPost] // Admin
-        public IHttpActionResult Create(BookModel book)
+        [HttpPost] // Admin only creates an empty book
+        public IHttpActionResult Create()
         {
             var currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
 
-            var id = this.bookService.Create(currentUserId, book.Content);            
+            var id = this.bookService.Create(currentUserId);            
 
             return this.Ok(id);
         } 
+
+        [HttpPut]
+        public IHttpActionResult SetFirstChapter(BookModel book)
+        {
+            var currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
+
+            this.bookService.SetFirstChapter(currentUserId, book.BookId, book.ChapterContent);
+
+            return this.Ok();
+        }
         
         [HttpGet]
         public IHttpActionResult GetAll()

@@ -1,8 +1,17 @@
-﻿namespace PeopleBook.Models
+﻿using System;
+
+namespace PeopleBook.Models
 {
     public class Flag
     {
+        public Flag()
+        {
+            this.DateCreated = DateTime.Now;
+        }
+
         public int Id { get; set; }
+
+        public DateTime DateCreated { get; set; }
 
         public string UserId { get; set; }
 

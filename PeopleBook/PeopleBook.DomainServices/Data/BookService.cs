@@ -22,12 +22,11 @@
             return result;
         }
 
-        public Guid Create(string userId, string content)
+        public Guid Create(string userId)
         {
             var book = new Book
             {
-                UserId = userId,
-                Content = content
+                UserId = userId
             };
 
             this.Data.Books.Add(book);
@@ -35,6 +34,22 @@
             this.Data.SaveChanges();
 
             return book.Id;
-        } 
+        }
+
+        public void SetFirstChapter(string userId, Guid bookId, string chapterContent)
+        {
+            var book = this.Data.Books.Find(bookId);
+
+            var chapter = new Chapter
+            {
+                UserId = userId,               
+                BookId = bookId,
+                Content = chapterContent
+            };
+
+            book.Chapters.Add(chapter);
+
+            this.Data.SaveChanges();
+        }
     }
 }

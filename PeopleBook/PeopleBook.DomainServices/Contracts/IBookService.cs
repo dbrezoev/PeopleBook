@@ -9,6 +9,8 @@
     {
         IQueryable<Book> GetAll();
 
-        Guid Create(string userId, string content);
+        Guid Create(string userId);
+
+        void SetFirstChapter(string userId, Guid bookId, string chapterContent);
     }
 }

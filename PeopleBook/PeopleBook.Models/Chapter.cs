@@ -13,9 +13,12 @@
         {
             this.flags = new HashSet<Flag>();
             this.likes = new HashSet<Like>();
+            this.DateCreated = DateTime.Now;
         }
 
         public int Id { get; set; }
+
+        public DateTime DateCreated { get; set; }
 
         [Required]
         [StringLength(1000)] // Admin has to change this
