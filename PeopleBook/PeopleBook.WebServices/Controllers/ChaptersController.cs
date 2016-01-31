@@ -8,7 +8,7 @@
     using PeopleBook.DomainServices.Contracts;
     using PeopleBook.WebServices.RequestModels;
 
-    public class ChaptersController : ApiController
+    public class ChaptersController : BaseController
     {
         private readonly IChapterService chapterService;
 

@@ -8,7 +8,7 @@
     using PeopleBook.DomainServices.Contracts;
     using PeopleBook.WebServices.RequestModels;    
 
-    public class LikesController : ApiController
+    public class LikesController : BaseController
     {
         private readonly ILikesService likesService;
 

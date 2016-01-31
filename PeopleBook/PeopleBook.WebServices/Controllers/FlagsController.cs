@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace PeopleBook.WebServices.Controllers
 {
-    public class FlagsController : ApiController
+    public class FlagsController : BaseController
     {
         private readonly IFlagsService flagsService;
 

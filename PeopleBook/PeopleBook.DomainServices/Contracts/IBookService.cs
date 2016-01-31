@@ -1,16 +1,14 @@
 ﻿namespace PeopleBook.DomainServices.Contracts
 {
+    using System;
     using System.Linq;
 
     using PeopleBook.Models;
-    using System;
-
+    
     public interface IBookService : IService
     {
         IQueryable<Book> GetAll();
 
         Guid Create(string userId);
-
-        void SetFirstChapter(string userId, Guid bookId, string chapterContent);
     }
 }

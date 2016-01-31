@@ -13,7 +13,7 @@
     using RequestModels;
     using ResponseModels;
 
-    public class BooksController : ApiController
+    public class BooksController : BaseController
     {
         private readonly IBookService bookService;
 
@@ -30,16 +30,6 @@
             var id = this.bookService.Create(currentUserId);            
 
             return this.Ok(id);
-        } 
-
-        [HttpPut]
-        public IHttpActionResult SetFirstChapter(BookModel book)
-        {
-            var currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
-
-            this.bookService.SetFirstChapter(currentUserId, book.BookId, book.ChapterContent);
-
-            return this.Ok();
         }
         
         [HttpGet]

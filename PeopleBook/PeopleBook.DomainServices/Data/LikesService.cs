@@ -1,12 +1,13 @@
-﻿using PeopleBook.Data;
-using PeopleBook.DomainServices.Common;
-using PeopleBook.DomainServices.Contracts;
-using PeopleBook.Models;
-using System;
-using System.Linq;
-
-namespace PeopleBook.DomainServices.Data
+﻿namespace PeopleBook.DomainServices.Data
 {
+    using System;
+    using System.Linq;
+
+    using PeopleBook.Data;
+    using PeopleBook.DomainServices.Common;
+    using PeopleBook.DomainServices.Contracts;
+    using PeopleBook.Models;
+    
     public class LikesService : BaseService, ILikesService
     {
         public LikesService(IPeopleBookData data)
@@ -41,8 +42,6 @@ namespace PeopleBook.DomainServices.Data
         public int Delete(int chapterId, string userId)
         {
             var chapterToUnLike = this.Data.Chapters.Find(chapterId);
-
-            //user had to have liked before remove like
 
             var hasAlreadyLikedTheChapter = this.HasUserAlreadyLikedChapter(chapterId, userId);
 

@@ -1,12 +1,11 @@
 ﻿namespace PeopleBook.DomainServices.Data
 {
+    using System;
     using System.Linq;
 
     using PeopleBook.Data;
     using PeopleBook.Models;
     using Contracts;
-    using System.Threading.Tasks;
-    using System;
 
     public class BookService : BaseService, IBookService
     {
@@ -34,22 +33,6 @@
             this.Data.SaveChanges();
 
             return book.Id;
-        }
-
-        public void SetFirstChapter(string userId, Guid bookId, string chapterContent)
-        {
-            var book = this.Data.Books.Find(bookId);
-
-            var chapter = new Chapter
-            {
-                UserId = userId,               
-                BookId = bookId,
-                Content = chapterContent
-            };
-
-            book.Chapters.Add(chapter);
-
-            this.Data.SaveChanges();
         }
     }
 }

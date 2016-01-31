@@ -1,11 +1,13 @@
 ﻿namespace PeopleBook.DomainServices.Data
 {
+    using System;
+    using System.Linq;
+
     using PeopleBook.Data;
     using Common;
     using PeopleBook.DomainServices.Contracts;
     using PeopleBook.Models;
-    using System;
-    using System.Linq;
+    
 
     public class FlagsService : BaseService, IFlagsService
     {
