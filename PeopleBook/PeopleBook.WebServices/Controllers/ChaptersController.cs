@@ -1,9 +1,6 @@
 ﻿namespace PeopleBook.WebServices.Controllers
 {        
-    using System.Threading;
     using System.Web.Http;
-
-    using Microsoft.AspNet.Identity;
 
     using PeopleBook.DomainServices.Contracts;
     using PeopleBook.WebServices.RequestModels;
@@ -20,11 +17,9 @@
         [HttpPost]
         public IHttpActionResult Create(ChapterModel chapterModel)
         {
-            var currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
+            var id = this.chapterService.Create(this.CurrentUserId, chapterModel.BookId, chapterModel.Content);
 
-            this.chapterService.Create(currentUserId, chapterModel.BookId, chapterModel.Content);
-
-            return this.Ok();
+            return this.Ok(id);
         }
     }
 }

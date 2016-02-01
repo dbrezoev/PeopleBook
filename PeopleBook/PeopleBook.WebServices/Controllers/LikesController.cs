@@ -3,8 +3,6 @@
     using System.Threading;
     using System.Web.Http;
 
-    using Microsoft.AspNet.Identity;
-
     using PeopleBook.DomainServices.Contracts;
     using PeopleBook.WebServices.RequestModels;    
 
@@ -20,8 +18,7 @@
         [HttpPost]
         public IHttpActionResult Create(LikeModel likeModel)
         {
-            var currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
-            var id = this.likesService.Create(likeModel.ChapterId, currentUserId);
+            var id = this.likesService.Create(likeModel.ChapterId, this.CurrentUserId);
 
             return this.Ok(id);
         }
@@ -29,9 +26,7 @@
         [HttpDelete]
         public IHttpActionResult Delete(LikeModel likeModel)
         {
-            var currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
-
-            var id = this.likesService.Delete(likeModel.ChapterId, currentUserId);
+            var id = this.likesService.Delete(likeModel.ChapterId, this.CurrentUserId);
 
             return this.Ok(id);
         }

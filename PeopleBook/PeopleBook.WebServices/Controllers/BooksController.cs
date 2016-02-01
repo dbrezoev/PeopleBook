@@ -1,16 +1,9 @@
 ﻿namespace PeopleBook.WebServices.Controllers
 {
-    using System;
-    using System.Threading;
+    using System.Linq;
     using System.Web.Http;
 
-    using Microsoft.AspNet.Identity;
-
-    using Data;
-    using PeopleBook.Models;
     using DomainServices.Contracts;
-    using System.Linq;
-    using RequestModels;
     using ResponseModels;
 
     public class BooksController : BaseController
@@ -25,9 +18,7 @@
         [HttpPost] // Admin only creates an empty book
         public IHttpActionResult Create()
         {
-            var currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
-
-            var id = this.bookService.Create(currentUserId);            
+            var id = this.bookService.Create(this.CurrentUserId);            
 
             return this.Ok(id);
         }

@@ -1,15 +1,9 @@
-﻿using Microsoft.AspNet.Identity;
-using PeopleBook.DomainServices.Contracts;
+﻿using PeopleBook.DomainServices.Contracts;
 using PeopleBook.WebServices.RequestModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Web;
-using System.Web.Http;
-
 namespace PeopleBook.WebServices.Controllers
 {
+    using System.Web.Http;
+
     public class FlagsController : BaseController
     {
         private readonly IFlagsService flagsService;
@@ -22,9 +16,7 @@ namespace PeopleBook.WebServices.Controllers
         [HttpPost]
         public IHttpActionResult Create(FlagModel flagModel)
         {
-            var currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
-
-            var flagId = this.flagsService.Create(flagModel.ChapterId, currentUserId);
+            var flagId = this.flagsService.Create(flagModel.ChapterId, this.CurrentUserId);
 
             return this.Ok(flagId);
         }
