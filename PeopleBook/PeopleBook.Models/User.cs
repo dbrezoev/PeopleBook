@@ -6,18 +6,21 @@
 
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public class User : IdentityUser
     {
         private ICollection<Like> likes;
         private ICollection<Chapter> chapters;
         private ICollection<Flag> flags;
+        private int symbolsAllowed;
 
         public User()
         {
             this.flags = new HashSet<Flag>();
             this.chapters = new HashSet<Chapter>();
             this.likes = new HashSet<Like>();
+            this.symbolsAllowed = 200;
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager, string authenticationType)
@@ -28,9 +31,21 @@
             return userIdentity;
         }
 
-        public bool Gender { get; set; }
+        public int Age { get; set; }
 
-        public ICollection<Chapter> Chapters
+        public int SymbolsAllowed
+        {
+            get
+            {
+                return this.symbolsAllowed;
+            }
+            set
+            {
+                this.symbolsAllowed = value;
+            }
+        }
+
+        public virtual ICollection<Chapter> Chapters
         {
             get
             {
@@ -42,7 +57,7 @@
             }
         }
 
-        public ICollection<Flag> Flags
+        public virtual ICollection<Flag> Flags
         {
             get
             {
@@ -54,7 +69,7 @@
             }
         }
 
-        public ICollection<Like> Likes
+        public virtual ICollection<Like> Likes
         {
             get
             {

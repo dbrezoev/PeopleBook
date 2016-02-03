@@ -21,5 +21,13 @@
 
             return this.Ok(id);
         }
+
+        [HttpDelete] // admin only
+        public IHttpActionResult Delete(int chapterId)
+        {
+            var id = this.chapterService.Delete(chapterId);
+
+            return this.Ok(id);
+        }
     }
 }

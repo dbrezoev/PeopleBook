@@ -30,5 +30,15 @@
 
             return chapter.Id;
         }
+
+        public int Delete(int chapterId)
+        {
+            var chapterToDelete = this.Data.Chapters.Find(chapterId);
+
+            this.Data.Chapters.Delete(chapterToDelete);
+            this.Data.SaveChanges();
+
+            return chapterToDelete.Id;
+        }
     }
 }

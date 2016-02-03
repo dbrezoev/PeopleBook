@@ -1,6 +1,7 @@
 namespace PeopleBook.Data.Migrations
 {
     using System.Data.Entity.Migrations;
+    using System.Linq;
 
     public sealed class Configuration : DbMigrationsConfiguration<PeopleBookDbContext>
     {
@@ -12,6 +13,13 @@ namespace PeopleBook.Data.Migrations
 
         protected override void Seed(PeopleBookDbContext context)
         {
+            var allUsers = context.Users.ToList();
+            foreach (var user in allUsers)
+            {
+                user.SymbolsAllowed = 200;
+            }
+
+            context.SaveChanges();
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
