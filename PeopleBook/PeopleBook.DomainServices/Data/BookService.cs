@@ -44,5 +44,14 @@
 
             return book.Id.ToString();
         }
+
+        public IQueryable<Book> Get(string bookId)
+        {
+            var query = this.Data.Books
+                .All()
+                .Where(b => b.Id.ToString() == bookId);
+
+            return query;
+        }
     }
 }

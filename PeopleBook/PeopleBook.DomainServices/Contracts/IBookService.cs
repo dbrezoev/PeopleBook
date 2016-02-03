@@ -12,5 +12,7 @@
         Guid Create(string userId);
 
         string Delete(string bookId);
+
+        IQueryable<Book> Get(string bookId);
     }
 }

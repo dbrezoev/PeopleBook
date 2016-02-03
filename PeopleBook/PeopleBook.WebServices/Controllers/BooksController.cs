@@ -43,7 +43,15 @@
             }).ToList();
 
             return this.Ok(allBooks);
-        }       
+        }
+
+        [HttpGet]
+        public IHttpActionResult Get(string bookId)
+        {
+            var book = this.bookService.Get(bookId).FirstOrDefault();
+
+            return this.Ok(book);
+        }
 
     }
 }
