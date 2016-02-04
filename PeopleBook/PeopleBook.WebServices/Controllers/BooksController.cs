@@ -24,11 +24,11 @@
         }
 
         [HttpDelete] // Admin only!
-        public IHttpActionResult Delete(string bookId)
+        public IHttpActionResult Remove([FromUri]string id)
         {
-            var id = this.bookService.Delete(bookId);
+            var deletedBookId = this.bookService.Delete(id);
 
-            return this.Ok(id);
+            return this.Ok(deletedBookId);
         }
 
         [HttpGet]

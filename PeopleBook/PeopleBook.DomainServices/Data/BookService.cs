@@ -37,7 +37,7 @@
 
         public string Delete(string bookId)
         {
-            var book = this.Data.Books.Find(bookId);
+            var book = this.Data.Books.Find(new Guid(bookId));
 
             this.Data.Books.Delete(book);
             this.Data.SaveChanges();
