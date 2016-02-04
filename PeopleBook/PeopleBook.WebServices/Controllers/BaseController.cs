@@ -13,11 +13,7 @@
         {
             get
             {
-                return this.currentUserId;
-            }
-            private set
-            {
-                this.currentUserId = Thread.CurrentPrincipal.Identity.GetUserId();
+                return Thread.CurrentPrincipal.Identity.GetUserId();
             }
         }
     }

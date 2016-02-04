@@ -13,14 +13,12 @@
         private ICollection<Like> likes;
         private ICollection<Chapter> chapters;
         private ICollection<Flag> flags;
-        private int symbolsAllowed;
 
         public User()
         {
             this.flags = new HashSet<Flag>();
             this.chapters = new HashSet<Chapter>();
             this.likes = new HashSet<Like>();
-            this.symbolsAllowed = 200;
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager, string authenticationType)
@@ -33,17 +31,11 @@
 
         public int Age { get; set; }
 
-        public int SymbolsAllowed
-        {
-            get
-            {
-                return this.symbolsAllowed;
-            }
-            set
-            {
-                this.symbolsAllowed = value;
-            }
-        }
+        public int SymbolsAllowed { get; set; }
+
+        public bool CanLike { get; set; }
+
+        public bool CanFlag { get; set; }
 
         public virtual ICollection<Chapter> Chapters
         {
