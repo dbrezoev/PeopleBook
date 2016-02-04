@@ -19,16 +19,18 @@
         public int Create(int chapterId, string userId)
         {
             var chapterToBeFlagged = this.Data.Chapters.Find(chapterId);
-
-            //check if this user has already flagged this chapter
-            var hasALreadyFLaggedTheChapter = this.Data.Flags
-                .All()
-                .Where(f => f.UserId == userId)
-                .Where(f => f.ChapterId == chapterId).Any();
+            bool hasALreadyFLaggedTheChapter = this.UserALreadyFlaggedTheChapter(chapterId, userId);
 
             if (hasALreadyFLaggedTheChapter)
             {
                 throw new ArgumentException(string.Format(ServicesConstants.UserHasAlreadyFlaggedThisChapter, userId, chapterId));
+            }
+
+            var userHasRightToFlag = this.UserHasRightToFlag(userId);
+
+            if (!userHasRightToFlag)
+            {
+                throw new ArgumentException(string.Format(ServicesConstants.UserHasNoRightToFlag, userId));
             }
 
             var flag = new Flag
@@ -42,6 +44,24 @@
             this.Data.SaveChanges();
 
             return flag.Id;
+        }
+
+        private bool UserALreadyFlaggedTheChapter(int chapterId, string userId)
+        {
+
+            var result =  this.Data.Flags
+                .All()
+                .Where(f => f.UserId == userId)
+                .Where(f => f.ChapterId == chapterId).Any();
+
+            return result;
+        }
+
+        private bool UserHasRightToFlag(string userId)
+        {
+            var result = this.Data.Users.Find(userId).CanFlag;
+
+            return result;
         }
     }
 }

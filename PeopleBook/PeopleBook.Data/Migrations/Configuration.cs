@@ -17,6 +17,8 @@ namespace PeopleBook.Data.Migrations
             foreach (var user in allUsers)
             {
                 user.SymbolsAllowed = 200;
+                user.CanFlag = true;
+                user.CanLike = true;
             }
 
             context.SaveChanges();

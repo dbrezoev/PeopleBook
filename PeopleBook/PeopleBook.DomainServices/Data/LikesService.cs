@@ -26,6 +26,13 @@
                 throw new ArgumentException(string.Format(ServicesConstants.UserHasAlreadyLikedThisChapter, userId, chapterId));
             }
 
+            var hasRightToLike = this.UserHasRightToLike(userId);
+
+            if (!hasRightToLike)
+            {
+                throw new ArgumentException(string.Format(ServicesConstants.UserHasNoRightToLike, userId));
+            }
+
             var like = new Like
             {
                 UserId = userId.ToString(),
@@ -62,6 +69,13 @@
 
             return like.Id;
         }
+
+        private bool UserHasRightToLike(string userId)
+        {
+            var result = this.Data.Users.Find(userId).CanLike;
+
+            return result;
+        }        
 
         private bool HasUserAlreadyLikedChapter(int chapterId, string userId)
         {
