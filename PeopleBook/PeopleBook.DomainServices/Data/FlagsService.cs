@@ -16,7 +16,7 @@
         {
         }
 
-        public int Create(int chapterId, string userId)
+        public int Create(int chapterId, string reason, string userId)
         {
             var chapterToBeFlagged = this.Data.Chapters.Find(chapterId);
             bool hasALreadyFLaggedTheChapter = this.UserALreadyFlaggedTheChapter(chapterId, userId);
@@ -36,7 +36,8 @@
             var flag = new Flag
             {
                 UserId = userId,
-                ChapterId = chapterId
+                ChapterId = chapterId,
+                Reason = reason
             };
 
             chapterToBeFlagged.Flags.Add(flag);

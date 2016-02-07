@@ -16,7 +16,7 @@ namespace PeopleBook.WebServices.Controllers
         [HttpPost]
         public IHttpActionResult Create(FlagModel flagModel)
         {
-            var flagId = this.flagsService.Create(flagModel.ChapterId, this.CurrentUserId);
+            var flagId = this.flagsService.Create(flagModel.ChapterId, flagModel.Reason, this.CurrentUserId);
 
             return this.Ok(flagId);
         }

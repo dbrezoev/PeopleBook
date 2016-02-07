@@ -2,6 +2,6 @@
 {
     public interface IFlagsService : IService
     {
-        int Create(int chapterId, string userId);
+        int Create(int chapterId, string reason, string userId);
     }
 }
