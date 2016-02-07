@@ -13,6 +13,8 @@ namespace PeopleBook.Models
 
         public DateTime DateCreated { get; set; }
 
+        public string Reason { get; set; }
+
         public string UserId { get; set; }
 
         public virtual User User { get; set; }
