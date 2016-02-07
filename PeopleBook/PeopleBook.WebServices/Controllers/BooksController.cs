@@ -46,9 +46,15 @@
         }
 
         [HttpGet]
-        public IHttpActionResult Get(string bookId)
+        public IHttpActionResult Get(string id)
         {
-            var book = this.bookService.Get(bookId).FirstOrDefault();
+            var book = this.bookService.Get(id).Select(b => new BookResponseModel
+            {
+                Content = b.Content,
+                BookState = b.BookState,
+                DateCreated = b.DateCreated,
+                Title = b.Title
+            }).FirstOrDefault();
 
             return this.Ok(book);
         }
