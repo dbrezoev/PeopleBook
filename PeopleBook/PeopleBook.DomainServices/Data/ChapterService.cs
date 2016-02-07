@@ -13,14 +13,15 @@
         {
         }       
 
-        public int Create(string userId, Guid bookId, string chapterContent)
+        public int Create(string userId, string bookId, string chapterContent)
         {
-            var book = this.Data.Books.Find(bookId);
+            var bookIdGuid = new Guid(bookId);
+            var book = this.Data.Books.Find(new Guid(bookId));
 
             var chapter = new Chapter
             {
                 UserId = userId,
-                BookId = bookId,
+                BookId = bookIdGuid,
                 Content = chapterContent
             };
 

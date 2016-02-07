@@ -26,6 +26,11 @@
                 throw new ArgumentException(string.Format(ServicesConstants.UserHasAlreadyLikedThisChapter, userId, chapterId));
             }
 
+            if (this.IsUserTryingToLikeOwnChapter(userId, chapterId))
+            {
+                throw new ArgumentException(string.Format(ServicesConstants.UserIsTryingToLikeOwnChapter, userId));
+            }
+
             var hasRightToLike = this.UserHasRightToLike(userId);
 
             if (!hasRightToLike)
@@ -75,6 +80,13 @@
             var result = this.Data.Users.Find(userId).CanLike;
 
             return result;
+        }
+        
+        private bool IsUserTryingToLikeOwnChapter(string userId, int chapterId)
+        {
+            var chapter = this.Data.Chapters.Find(chapterId);
+
+            return chapter.UserId.Equals(userId);
         }        
 
         private bool HasUserAlreadyLikedChapter(int chapterId, string userId)

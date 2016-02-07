@@ -9,8 +9,8 @@ namespace PeopleBook.WebServices.RequestModels
     {
         public string Content { get; set; }
 
-        public Guid BookId { get; set; }
+        public string BookId { get; set; }
 
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
     }
 }
